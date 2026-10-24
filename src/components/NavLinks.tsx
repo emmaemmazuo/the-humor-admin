@@ -8,13 +8,14 @@ const links = [
   { href: '/admin/users', label: 'Users' },
   { href: '/admin/jokes', label: 'Jokes' },
   { href: '/admin/votes', label: 'Votes' },
+  { href: '/admin/data', label: 'Course data' },
 ]
 
 export default function NavLinks() {
   const pathname = usePathname()
 
   return (
-    <nav style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+    <nav style={{ display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
       {links.map((l) => {
         const active =
           l.href === '/admin' ? pathname === '/admin' : pathname.startsWith(l.href)
